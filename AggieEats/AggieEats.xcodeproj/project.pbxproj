@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1424FA1C2D4882CF004B842A /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 1424FA1B2D4882CF004B842A /* CodeScanner */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		ABD5A29A2D273109001521B5 /* AggieEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AggieEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1424FA1C2D4882CF004B842A /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = AggieEats;
 			packageProductDependencies = (
+				1424FA1B2D4882CF004B842A /* CodeScanner */,
 			);
 			productName = AggieEats;
 			productReference = ABD5A29A2D273109001521B5 /* AggieEats.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = ABD5A2912D273109001521B5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1424FA1A2D4882CF004B842A /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ABD5A29B2D273109001521B5 /* Products */;
 			projectDirPath = "";
@@ -322,6 +331,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1424FA1A2D4882CF004B842A /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1424FA1B2D4882CF004B842A /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1424FA1A2D4882CF004B842A /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ABD5A2922D273109001521B5 /* Project object */;
 }
