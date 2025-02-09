@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct WeeklyMenuView: View {
+    let menu: [Menu] = Bundle.main.decode("Menu.json")
     
     var body: some View {
         ScrollView {
@@ -14,7 +15,15 @@ struct WeeklyMenuView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.bottom)
-                //TODO: Integrate JSON data into the weekly menu.
+                ForEach(menu, id: \.self) { menuOption in
+                    VStack(alignment: .leading) {
+                        Text(menuOption.day)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        MenuOptionsView(menuItems: menuOption.menu)
+                    }
+                    .padding(.bottom)
+                }
             }
         }
         .padding()

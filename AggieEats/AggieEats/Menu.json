@@ -53,5 +53,23 @@
         "Southwest Tofu",
         ["","🫛","V"]
     ]
+  },
+   {
+    "day": "Saturday",
+    "locationName": "Memorial Union Quad",
+    "coordinate": [38.54141, -121.74845],
+    "menu": [
+        "Closed",
+        [""],
+    ]
+  },
+   {
+    "day": "Sunday",
+    "locationName": "Memorial Union Quad",
+    "coordinate": [38.54141, -121.74845],
+    "menu": [
+        "Closed",
+        [""],
+    ]
   }
 ]

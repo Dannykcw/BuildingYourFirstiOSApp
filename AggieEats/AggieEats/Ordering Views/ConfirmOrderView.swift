@@ -1,7 +1,8 @@
 //
-//  ConfirmOrderView.swift
+//  ConfirmOrderVIew.swift
 //  AggieEats
 //
+
 
 import SwiftUI
 
@@ -10,6 +11,17 @@ struct ConfirmOrderView: View {
     @State var quantityStr: String = String()
     @State var amount: Decimal = 0.00
     @FocusState var isAmountFocused: Bool
+    @State var navigateToOrderCompletion: Bool = false
+    @State var totalAmount: Decimal = 0.00
+    
+    func startOrder () {
+        // TODO: start order function implementation
+        // this function sends out the payment intent to server and saves the client secret returned.
+    }
+    
+    func calculateTotalAmount() {
+        totalAmount = amount*Decimal(quantity)
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,9 +35,11 @@ struct ConfirmOrderView: View {
                 .frame(height: 3)
                 .overlay(.black)
                 .padding([.top, .bottom])
-            TotalView(total: amount)
+            TotalView(total: $totalAmount)
             Button {
-                // TODO: Add button action.
+                // calling the start order function
+                // TODO: calling startOrder()
+                navigateToOrderCompletion = true
             } label: {
                 Text("Confirm Order")
                     .fontWeight(.bold)
@@ -49,12 +63,16 @@ struct ConfirmOrderView: View {
         .onChange(of: quantity) {
             quantityStr = String(quantity)
         }
+        .onChange(of: amount) { _ in
+            calculateTotalAmount()
+        }
         .onTapGesture {
             isAmountFocused = false
-            
-            
         }
-    }
+        .navigationDestination(isPresented: $navigateToOrderCompletion) {
+            OrderCompletion(total: $totalAmount)
+        }
+    } // end of nav stack
     
 }
 
@@ -108,7 +126,7 @@ struct EnterAmountView : View {
 }
 
 struct TotalView: View {
-    var total: Decimal
+    @Binding var total: Decimal
     
     var body: some View {
         HStack {

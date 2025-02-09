@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		AB266CD02D4882EB00CA7642 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = AB266CCF2D4882EB00CA7642 /* CodeScanner */; };
+		BD3ABA582D5888730032CF70 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA572D5888730032CF70 /* Stripe */; };
+		BD3ABA5A2D5888730032CF70 /* StripeApplePay in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA592D5888730032CF70 /* StripeApplePay */; };
+		BD3ABA5C2D5888730032CF70 /* StripeCardScan in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA5B2D5888730032CF70 /* StripeCardScan */; };
+		BD3ABA5E2D5888730032CF70 /* StripeConnect in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA5D2D5888730032CF70 /* StripeConnect */; };
+		BD3ABA602D5888730032CF70 /* StripeFinancialConnections in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA5F2D5888730032CF70 /* StripeFinancialConnections */; };
+		BD3ABA622D5888730032CF70 /* StripeIdentity in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA612D5888730032CF70 /* StripeIdentity */; };
+		BD3ABA642D5888730032CF70 /* StripePaymentSheet in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA632D5888730032CF70 /* StripePaymentSheet */; };
+		BD3ABA662D5888730032CF70 /* StripePayments in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA652D5888730032CF70 /* StripePayments */; };
+		BD3ABA682D5888730032CF70 /* StripePaymentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA672D5888730032CF70 /* StripePaymentsUI */; };
+		BD3ABA6B2D5888D10032CF70 /* BitCollections in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA6A2D5888D10032CF70 /* BitCollections */; };
+		BD3ABA6D2D5888D10032CF70 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA6C2D5888D10032CF70 /* Collections */; };
+		BD3ABA6F2D5888D10032CF70 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA6E2D5888D10032CF70 /* DequeModule */; };
+		BD3ABA712D5888D10032CF70 /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA702D5888D10032CF70 /* HashTreeCollections */; };
+		BD3ABA732D5888D10032CF70 /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA722D5888D10032CF70 /* HeapModule */; };
+		BD3ABA752D5888D10032CF70 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA742D5888D10032CF70 /* OrderedCollections */; };
+		BD3ABA772D5888D10032CF70 /* _RopeModule in Frameworks */ = {isa = PBXBuildFile; productRef = BD3ABA762D5888D10032CF70 /* _RopeModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +43,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3ABA662D5888730032CF70 /* StripePayments in Frameworks */,
+				BD3ABA732D5888D10032CF70 /* HeapModule in Frameworks */,
+				BD3ABA642D5888730032CF70 /* StripePaymentSheet in Frameworks */,
+				BD3ABA5C2D5888730032CF70 /* StripeCardScan in Frameworks */,
+				BD3ABA602D5888730032CF70 /* StripeFinancialConnections in Frameworks */,
+				BD3ABA5A2D5888730032CF70 /* StripeApplePay in Frameworks */,
+				BD3ABA752D5888D10032CF70 /* OrderedCollections in Frameworks */,
+				BD3ABA622D5888730032CF70 /* StripeIdentity in Frameworks */,
+				BD3ABA6D2D5888D10032CF70 /* Collections in Frameworks */,
+				BD3ABA6F2D5888D10032CF70 /* DequeModule in Frameworks */,
+				BD3ABA772D5888D10032CF70 /* _RopeModule in Frameworks */,
 				AB266CD02D4882EB00CA7642 /* CodeScanner in Frameworks */,
+				BD3ABA582D5888730032CF70 /* Stripe in Frameworks */,
+				BD3ABA712D5888D10032CF70 /* HashTreeCollections in Frameworks */,
+				BD3ABA682D5888730032CF70 /* StripePaymentsUI in Frameworks */,
+				BD3ABA5E2D5888730032CF70 /* StripeConnect in Frameworks */,
+				BD3ABA6B2D5888D10032CF70 /* BitCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +103,22 @@
 			name = AggieEats;
 			packageProductDependencies = (
 				AB266CCF2D4882EB00CA7642 /* CodeScanner */,
+				BD3ABA572D5888730032CF70 /* Stripe */,
+				BD3ABA592D5888730032CF70 /* StripeApplePay */,
+				BD3ABA5B2D5888730032CF70 /* StripeCardScan */,
+				BD3ABA5D2D5888730032CF70 /* StripeConnect */,
+				BD3ABA5F2D5888730032CF70 /* StripeFinancialConnections */,
+				BD3ABA612D5888730032CF70 /* StripeIdentity */,
+				BD3ABA632D5888730032CF70 /* StripePaymentSheet */,
+				BD3ABA652D5888730032CF70 /* StripePayments */,
+				BD3ABA672D5888730032CF70 /* StripePaymentsUI */,
+				BD3ABA6A2D5888D10032CF70 /* BitCollections */,
+				BD3ABA6C2D5888D10032CF70 /* Collections */,
+				BD3ABA6E2D5888D10032CF70 /* DequeModule */,
+				BD3ABA702D5888D10032CF70 /* HashTreeCollections */,
+				BD3ABA722D5888D10032CF70 /* HeapModule */,
+				BD3ABA742D5888D10032CF70 /* OrderedCollections */,
+				BD3ABA762D5888D10032CF70 /* _RopeModule */,
 			);
 			productName = AggieEats;
 			productReference = ABD5A29A2D273109001521B5 /* AggieEats.app */;
@@ -102,6 +150,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				AB266CCE2D4882EB00CA7642 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */,
+				BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ABD5A29B2D273109001521B5 /* Products */;
@@ -341,6 +391,22 @@
 				minimumVersion = 2.5.2;
 			};
 		};
+		BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.4.1;
+			};
+		};
+		BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -348,6 +414,86 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB266CCE2D4882EB00CA7642 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
+		};
+		BD3ABA572D5888730032CF70 /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = Stripe;
+		};
+		BD3ABA592D5888730032CF70 /* StripeApplePay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeApplePay;
+		};
+		BD3ABA5B2D5888730032CF70 /* StripeCardScan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeCardScan;
+		};
+		BD3ABA5D2D5888730032CF70 /* StripeConnect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeConnect;
+		};
+		BD3ABA5F2D5888730032CF70 /* StripeFinancialConnections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeFinancialConnections;
+		};
+		BD3ABA612D5888730032CF70 /* StripeIdentity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripeIdentity;
+		};
+		BD3ABA632D5888730032CF70 /* StripePaymentSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripePaymentSheet;
+		};
+		BD3ABA652D5888730032CF70 /* StripePayments */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripePayments;
+		};
+		BD3ABA672D5888730032CF70 /* StripePaymentsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA562D5888730032CF70 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = StripePaymentsUI;
+		};
+		BD3ABA6A2D5888D10032CF70 /* BitCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = BitCollections;
+		};
+		BD3ABA6C2D5888D10032CF70 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		BD3ABA6E2D5888D10032CF70 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		BD3ABA702D5888D10032CF70 /* HashTreeCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HashTreeCollections;
+		};
+		BD3ABA722D5888D10032CF70 /* HeapModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HeapModule;
+		};
+		BD3ABA742D5888D10032CF70 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		BD3ABA762D5888D10032CF70 /* _RopeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD3ABA692D5888D10032CF70 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = _RopeModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,8 +6,11 @@
 import SwiftUI
 import MapKit
 import CodeScanner
+import OrderedCollections
 
 struct HomePage: View {
+    let menu: [Menu] = Bundle.main.decode("Menu.json")
+    
     @State var showScanner = false
     @State var navigateToOrderingPage = false
     
@@ -23,15 +26,19 @@ struct HomePage: View {
                             Spacer()
                             ScanQrCodeButton(showScanner: $showScanner)
                         }
-                        Text("Memorial Union")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+                        
+                        ForEach(menu, id: \.self) { menuOption in
+                            if menuOption.day == getTodayWeekDay() {
+                                Text(menuOption.locationName)
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                TruckLocationView(markerName: menuOption.locationName, coordinates: menuOption.coordinate)
+                                TodaysMenuView(menuItems: menuOption.menu)
+                            }
+                        }
                     } //end of inner VStack
                     
-                    TruckLocationView()
-                    TodaysMenuView()
-                    
-                } //end of outer VStack
+                }
             }
             .sheet(isPresented: $showScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "ABCDE", completion: handleScan)
@@ -45,8 +52,7 @@ struct HomePage: View {
         
     }
     
-    //Returns what day today is.
-    func getTodayWeekDay() -> String {
+    func getTodayWeekDay()-> String {
            let dateFormatter = DateFormatter()
            dateFormatter.dateFormat = "EEEE"
            let weekDay = dateFormatter.string(from: Date())
@@ -78,26 +84,32 @@ struct ScanQrCodeButton: View {
     }
 }
 
-//TODO: Remove hardedcoded values.
 struct TruckLocationView: View {
+    @State var markerName: String
+    @State var coordinates: [Double]
+    
     var body: some View {
         Map {
-            Marker("MU", coordinate: CLLocationCoordinate2D(latitude: 38.54141, longitude: -121.74845))
+            Marker(markerName, coordinate: CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1]))
         }
-        .frame(width: 370, height: 400)
+        .frame(width: 380, height: 400)
+        
         .padding(.bottom)
     }
 }
 
-//TODO: Use updated MenuOptionsView
+//First thing I did
 struct TodaysMenuView: View {
+    @State var menuItems: OrderedDictionary<String, [String]>
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("What's On The Menu?")
                 .font(.title)
                 .fontWeight(.bold)
-            //Add updated MenuOptionsView here!
+            MenuOptionsView(menuItems: menuItems)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
