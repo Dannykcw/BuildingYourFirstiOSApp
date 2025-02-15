@@ -58,7 +58,7 @@ struct AllergensView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                ForEach(1..<allergens.count) { index in
+                ForEach(allergens.indices.dropFirst(), id: \.self) { index in
                     HStack {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)

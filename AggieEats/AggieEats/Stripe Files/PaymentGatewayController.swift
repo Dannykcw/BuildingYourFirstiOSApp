@@ -1,6 +1,6 @@
 //
 //  PaymentGatewayController.swift
-//  AggieEats
+//  Aggie Eats
 //
 
 import Foundation
@@ -9,9 +9,17 @@ import UIKit
 
 class PaymentGatewayController: UIViewController {
     
-    func submitPayment() {
-        // TODO: implementation of final submission of payment
+    func submitPayment(intent: STPPaymentIntentParams, completion: @escaping
+    (STPPaymentHandlerActionStatus, STPPaymentIntent?, NSError?) -> Void) {
+        
+        let paymentHandler = STPPaymentHandler.shared()
+        
+        paymentHandler.confirmPayment(intent, with: self) { (status, intent, error) in
+            completion(status, intent, error)
+        }
+        
     }
+    
 }
 
 extension PaymentGatewayController: STPAuthenticationContext {

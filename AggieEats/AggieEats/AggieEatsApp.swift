@@ -9,7 +9,11 @@ import Stripe
 @main
 struct AggieEatsApp: App {
     init() {
-        StripeAPI.defaultPublishableKey = "API_publishable_key_here"
+        if let stripe_pub_api = ProcessInfo.processInfo.environment["STRIPE_API_PUB"] {
+            StripeAPI.defaultPublishableKey = stripe_pub_api
+        } else {
+            print("No api key found")
+        }
     }
     
     var body: some Scene {

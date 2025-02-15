@@ -14,9 +14,33 @@ struct ConfirmOrderView: View {
     @State var navigateToOrderCompletion: Bool = false
     @State var totalAmount: Decimal = 0.00
     
-    func startOrder () {
-        // TODO: start order function implementation
-        // this function sends out the payment intent to server and saves the client secret returned.
+    func startOrder (completion: @escaping (String?) -> Void) {
+        guard let url = URL(string: "https://plastic-neighborly-braid.glitch.me/create-payment-intent") else {
+            print("didn't fetch url")
+            return
+        }
+        print("fetched client secret")
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        totalAmount = amount*Decimal(quantity)
+        request.httpBody = try! JSONEncoder().encode(["amount": totalAmount])
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+                        
+            guard let data = data, error == nil,
+                  (response as? HTTPURLResponse)?.statusCode == 200
+            else {
+                print("nil didn't work")
+                completion(nil)
+                return
+            }
+            print("got the client secret")
+            let checkoutIntentResponse = try? JSONDecoder().decode(CheckoutIntentResponse.self, from: data)
+            completion(checkoutIntentResponse?.clientSecret)
+
+        }.resume()
+        
     }
     
     func calculateTotalAmount() {
@@ -37,8 +61,9 @@ struct ConfirmOrderView: View {
                 .padding([.top, .bottom])
             TotalView(total: $totalAmount)
             Button {
-                // calling the start order function
-                // TODO: calling startOrder()
+                startOrder { clientSecret in
+                    PaymentConfig.shared.paymentIntentClientSecret = clientSecret
+                }
                 navigateToOrderCompletion = true
             } label: {
                 Text("Confirm Order")
@@ -63,7 +88,7 @@ struct ConfirmOrderView: View {
         .onChange(of: quantity) {
             quantityStr = String(quantity)
         }
-        .onChange(of: amount) { _ in
+        .onChange(of: amount) { oldValue, newValue in
             calculateTotalAmount()
         }
         .onTapGesture {

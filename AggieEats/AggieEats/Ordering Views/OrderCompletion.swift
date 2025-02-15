@@ -13,9 +13,33 @@ struct OrderCompletion: View {
     let paymentGatewayController = PaymentGatewayController()
     
     func pay() {
-        // pay functionality, to submit the final payment to Stripe from user's credit card.
-        // TODO: Pay functionality
-    }
+            guard let clientSecret = PaymentConfig.shared.paymentIntentClientSecret else {
+                        print("No client secret")
+                        message = "No client secret"
+                        return
+            } // get the client secret if it exists
+            
+            // credit card information assigned to an instance of STPPaymentIntentParams
+            let paymentIntentParams = STPPaymentIntentParams(clientSecret: clientSecret)
+            paymentIntentParams.paymentMethodParams = paymentMethodParams
+            
+            // payment submitted to Stripe and returns the status of submission
+            paymentGatewayController.submitPayment(intent: paymentIntentParams) { status, intent, error in
+                
+                print(String(describing: error))
+                
+                    switch status {
+                        case .failed:
+                            message = "Failed"
+                        case .canceled:
+                            message = "Cancelled"
+                        case .succeeded:
+                            message = "Your payment has been successfully completed!"
+                    }
+                    
+                }
+            
+        }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,8 +50,9 @@ struct OrderCompletion: View {
             TotalView(total: $total) // from ConfirmOrderView.swift file
                 .padding(.bottom)
             Section {
-                // Stripe Credit Card TextField Here
-                // TODO: Credit card text field
+                // OrderCompletion.swift
+                // write this code in the section under TotalView
+                STPPaymentCardTextField.Representable.init(paymentMethodParams: $paymentMethodParams)
             } header: {
                 Text("Payment Information")
             }

@@ -62,7 +62,7 @@ struct HomePage: View {
     func handleScan(result: Result<ScanResult, ScanError>) {
        showScanner = false
         switch result {
-        case .success(let result):
+        case .success(_):
             navigateToOrderingPage = true
             
         case .failure(let error):
